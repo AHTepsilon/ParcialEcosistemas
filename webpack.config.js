@@ -6,7 +6,8 @@ module.exports =
     devtool: "eval-source-map",
     entry : 
     {
-        login: "./src/login.js"
+        login: "./src/login.js",
+        votesScreen: "./src/votesScreen.js"
     },  
     output: 
     {

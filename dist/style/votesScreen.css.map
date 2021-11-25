@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CACJ;EACI,MAAM,EAAE,IAAI;EACZ,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "votesScreen.scss"
+    ],
+    "names": [],
+    "file": "votesScreen.css"
+}

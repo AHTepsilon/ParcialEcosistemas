@@ -2,30 +2,54 @@ import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./firebase-config.js";
 import {getDatabase, ref, set, onValue, push} from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 
 const firebaseAppConfig = getFirebaseConfig();
 const firebaseApp = initializeApp(firebaseAppConfig);
+const auth = getAuth();
+const db = getDatabase();
 
-const usernameTxt = document.getElementById("emailInput");
+const emailTxt = document.getElementById("emailInput");
 const passwordTxt = document.getElementById("passwordInput");
 
 const loginBtn = document.getElementById("loginButton");
+
 
 const switchScreen = () =>
 {
     window.location.href = "votesScreen.html";
 }
 
-onAuthStateChanged(auth, (userAccount) =>
+function register(e, event)
 {
-    if(userAccount)
+    createUserWithEmailAndPassword(auth, emailTxt.value, passwordTxt.value)
+    .then((user_credential) => 
     {
-        
-    }
-});
+        console.log(user_credential);
+        const user = 
+        {
+            "id": user_credential.user.uid,
+            "email": emailTxt.value,
+            "password": passwordTxt.value,
+        }
+    
+        const dbRef = ref(db, "users/" + user.id);
+        set(dbRef, user).then(() =>
+        {
+            alert("Usuario guardado");
+            switchScreen();
+        });
+    })
+    .catch((error) =>
+    {
+        alert("Email or password invalid, please try again");
+        console.log(error.message);
+    });
+    
+}
+
 
 loginBtn.addEventListener("click", function()
 {
-    switchScreen();
+    register();
 });

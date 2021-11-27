@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./firebase-config.js";
 import {getDatabase, ref, set, onValue, push} from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 
 const firebaseAppConfig = getFirebaseConfig();
 const firebaseApp = initializeApp(firebaseAppConfig);
@@ -48,8 +48,24 @@ function register(e, event)
     
 }
 
+function login()
+{
+    signInWithEmailAndPassword(auth, emailTxt.value, passwordTxt.value).then(
+        (user_credential) =>
+        {
+            switchScreen();
+        })
+        .catch
+        (
+            (error) =>
+            {
+                alert("Correo o contraseña incorrectos");
+            }
+        );
+}
+
 
 loginBtn.addEventListener("click", function()
 {
-    register();
+    login();
 });

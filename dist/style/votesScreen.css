@@ -14,4 +14,81 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.book-card {
+  margin: 5px;
+  background-color: gold;
+  padding-bottom: 15px;
+  padding-top: 1px;
+  padding-left: 10px;
+  padding-right: 60px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#addBook:hover {
+  cursor: pointer;
+}
+
+.vote1Button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+.vote1Button:hover {
+  cursor: pointer;
+}
+
+.vote2Button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+.vote2Button:hover {
+  cursor: pointer;
+}
+
+.vote3Button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+.vote3Button:hover {
+  cursor: pointer;
+}
+
+.vote4Button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+.vote4Button:hover {
+  cursor: pointer;
+}
+
+.vote5Button {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+.vote5Button:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=votesScreen.css.map */

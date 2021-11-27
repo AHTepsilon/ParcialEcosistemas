@@ -6,3 +6,61 @@ body
     display: flex;
     align-items: center;
 }
+
+.book-card
+{
+    margin: 5px;
+    background-color: gold;
+    padding-bottom: 15px;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 60px;
+    flex-direction: row; 
+}
+
+#addBook
+{
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+@mixin buttons
+{
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    border: none;
+
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.vote1Button
+{
+    @include buttons;
+}
+
+.vote2Button
+{
+    @include buttons;
+}
+
+.vote3Button
+{
+    @include buttons;
+}
+
+.vote4Button
+{
+    @include buttons;
+}
+
+.vote5Button
+{
+    @include buttons;
+}
